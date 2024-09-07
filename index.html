@@ -72,7 +72,7 @@
             const hours = String(now.getHours()).padStart(2, '0');
             const minutes = String(now.getMinutes()).padStart(2, '0');
             const seconds = String(now.getSeconds()).padStart(2, '0');
-            document.getElementById('timeDisplay').textContent = ${hours}:${minutes}:${seconds};
+            document.getElementById('timeDisplay').textContent = `${hours}:${minutes}:${seconds}`;
         }
 
         // Aktualisierung der Uhrzeit jede Sekunde
@@ -94,7 +94,7 @@
             const newMinutes = String(newTime.getMinutes()).padStart(2, '0');
             
             // Anzeige der neuen Uhrzeit
-            document.getElementById('resultDisplay').textContent = Neue Uhrzeit: ${newHours}:${newMinutes};
+            document.getElementById('resultDisplay').textContent = `Neue Uhrzeit: ${newHours}:${newMinutes}`;
         }
 
         // Event Listener für den Button
