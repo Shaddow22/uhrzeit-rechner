@@ -1,7 +1,7 @@
 {
   "name": "Prüfungsrechner",
   "short_name": "Pruefungsrechner",
-  "start_url": "/",
+  "start_url": "/index.html",
   "display": "fullscreen",
   "orientation": "portrait",
   "background_color": "#f5fcff",
