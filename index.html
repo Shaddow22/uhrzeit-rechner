@@ -10,13 +10,17 @@
     <link rel="manifest" href="manifest.json">
     <title>Uhrzeit Rechner</title>
     <style>
+        html, body {
+            height: 100%; /* Stellt sicher, dass der Hintergrund die volle Höhe einnimmt */
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
             background-color: #f0f0f0;
         }
 
@@ -28,6 +32,10 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             width: 90%;
             max-width: 400px;
+            min-height: 100vh; /* Container nimmt die volle Höhe des Viewports ein */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         h1 {
