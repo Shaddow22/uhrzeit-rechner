@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Uhrzeit-Rechner">
@@ -26,37 +26,63 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
         }
 
         h1 {
-            font-size: 24px;
+            font-size: 5vw; /* Dynamische Schriftgröße */
             margin-bottom: 20px;
         }
 
         .time-display, .result-display {
-            font-size: 32px;
+            font-size: 8vw; /* Dynamische Schriftgröße für flexible Anpassung */
             margin: 20px 0;
         }
 
         input {
             padding: 10px;
-            font-size: 16px;
-            width: 100px;
+            font-size: 4vw;
+            width: 40%;
             margin-right: 10px;
+            box-sizing: border-box;
         }
 
         button {
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 10px;
+            font-size: 4vw;
             background-color: #007bff;
             color: #fff;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            width: 100%; /* Button nimmt die volle Breite ein */
+            box-sizing: border-box;
         }
 
         button:hover {
             background-color: #0056b3;
+        }
+
+        /* Media Query für kleine Bildschirme */
+        @media (max-width: 600px) {
+            .container {
+                width: 100%;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 6vw;
+            }
+
+            .time-display, .result-display {
+                font-size: 10vw;
+            }
+
+            input {
+                width: 100%; /* Input nimmt auf kleinen Bildschirmen volle Breite ein */
+                margin-bottom: 10px; /* Abstand zwischen Input und Button */
+            }
         }
     </style>
 </head>
