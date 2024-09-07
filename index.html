@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uhrzeit Rechner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .time-display, .result-display {
+            font-size: 32px;
+            margin: 20px 0;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 100px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Uhrzeit Rechner</h1>
+        <div id="timeDisplay" class="time-display">00:00:00</div>
+        <label for="minutesInput">Minuten hinzufügen:</label>
+        <input type="number" id="minutesInput" placeholder="Minuten eingeben">
+        <button id="addMinutesBtn">Minuten hinzufügen</button>
+        <div id="resultDisplay" class="result-display"></div>
+    </div>
+
+    <script>
+        // Funktion, um die aktuelle Uhrzeit anzuzeigen
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('timeDisplay').textContent = ${hours}:${minutes}:${seconds};
+        }
+
+        // Aktualisierung der Uhrzeit jede Sekunde
+        setInterval(updateTime, 1000);
+
+        // Funktion, um Minuten zu der aktuellen Uhrzeit hinzuzufügen
+        function addMinutes() {
+            const now = new Date();
+            const minutesToAdd = parseInt(document.getElementById('minutesInput').value);
+
+            if (isNaN(minutesToAdd)) {
+                document.getElementById('resultDisplay').textContent = "Bitte eine gültige Zahl eingeben.";
+                return;
+            }
+
+            // Berechnung der neuen Uhrzeit
+            const newTime = new Date(now.getTime() + minutesToAdd * 60000);
+            const newHours = String(newTime.getHours()).padStart(2, '0');
+            const newMinutes = String(newTime.getMinutes()).padStart(2, '0');
+            
+            // Anzeige der neuen Uhrzeit
+            document.getElementById('resultDisplay').textContent = Neue Uhrzeit: ${newHours}:${newMinutes};
+        }
+
+        // Event Listener für den Button
+        document.getElementById('addMinutesBtn').addEventListener('click', addMinutes);
+    </script>
+</body>
+</html>
